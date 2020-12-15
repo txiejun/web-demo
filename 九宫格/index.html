@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web九宫格实现</title>
+
+    <style type="text/css">
+        /*参考：https://segmentfault.com/a/1190000010969367*/
+        /*https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-image-slice*/
+        /*https://zhuanlan.zhihu.com/p/29472601*/
+        .bg9{
+            margin: 50px;
+            width: 300px;
+            height: 150px;
+            padding: 20px;
+            /*border:27px solid #000;*/
+            border-image-source:url(bg-9grid.png);
+            border-image-slice:27 27 27 27 fill;
+            border-image-width:27px 27px 27px 27px;
+            /*border-image-outset:27px 27px 27px 27px;*/
+            border-image-repeat:repeat;
+        }
+        .bg-reason{
+            margin: 50px;
+            width: 656px;
+            height: 49px;
+            padding: 0 50px;
+            line-height: 49px;
+            /*border:40px solid #000;*/
+            border-image-source:url(bg-reason-small.png);
+            border-image-slice:21 35 16 35 fill;
+            border-image-width:21px 35px 16px 35px;
+            /*border-image-outset:27px 27px 27px 27px;*/
+            /*border-image-repeat:repeat;*/
+        }
+        .bg-reason-orignal {
+            margin: 50px;
+            width: 656px;
+            height: 49px;
+            padding: 0 50px;
+            line-height: 49px;
+            background: url("bg-reason.png") no-repeat 0 0 / 100% 100%;
+        }
+        .bg-panel{
+            margin: 50px;
+            width: 350px;
+            /*height: 550px;*/
+            color: red;
+            /*border:10px solid #000;*/
+            border-image-source:url(panel2.png);
+            border-image-slice:68 68 68 68 fill;
+            border-image-width:68px 68px 68px 68px;
+            padding: 35px 15px 15px;
+            /*border-image-outset:27px 27px 27px 27px;*/
+            border-image-repeat:repeat;
+        }
+        .bg-wechat{
+            margin: 50px;
+            width: 400px;
+            /*height: 550px;*/
+            color: red;
+            /*border:10px solid #000;*/
+            border-image-source:url(bg-wechat.png);
+            border-image-slice:48 22 24 32 fill;
+            border-image-width:48px 22px 24px 32px;
+            padding: 10px;
+            /*border-image-outset:27px 27px 27px 27px;*/
+            border-image-repeat:repeat;
+        }
+        .grid{
+            margin: 50px;
+            width: 400px;
+            color: #3f90ce;
+            border-image-source:url(grid.png);
+            border-image-slice:27 27 27 27 fill;
+            border-image-width:27px 27px 27px 27px;
+            padding: 10px;
+            /*border-image-outset:27px 27px 27px 27px;*/
+            /*border-image-repeat:repeat;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="bg9">
+        内容1
+    </div>
+    <div class="bg-reason-orignal">
+        内容22
+    </div>
+    <div class="bg-reason">
+        内容2
+    </div>
+    <div class="bg-panel">
+        <ul>
+            <li>区域 1-4 为角区域（corner region）。</li>
+            <li>每一个都用一次来形成最终边界图像的角点。（Each one is used a single time to form the corners of the final border image.）</li>
+            <li>区域 5-8 边区域（edge region）。在最终的边框图像中重复，缩放或修改它们以匹配元素的尺寸。（These are repeated, scaled, or otherwise modified in the final border image to match the dimensions of the element.）</li>
+            <li>区域 9 为中心区域（ middle region）。它在默认情况下会被丢弃，但如果设置了关键字fill，则会将其用作背景图像。（It is discarded by default, but is used like a background image if the keyword fill is set.）</li>
+        </ul>
+    </div>
+    <div class="bg-wechat">
+        <ul>
+            <li>区域 1-4 为角区域（corner region）。</li>
+            <li>每一个都用一次来形成最终边界图像的角点。（Each one is used a single time to form the corners of the final border image.）</li>
+            <li>区域 5-8 边区域（edge region）。在最终的边框图像中重复，缩放或修改它们以匹配元素的尺寸。（These are repeated, scaled, or otherwise modified in the final border image to match the dimensions of the element.）</li>
+            <li>区域 9 为中心区域（ middle region）。它在默认情况下会被丢弃，但如果设置了关键字fill，则会将其用作背景图像。（It is discarded by default, but is used like a background image if the keyword fill is set.）</li>
+        </ul>
+    </div>
+    <div class="grid">
+        <ul>
+            <li>区域 1-4 为角区域（corner region）。</li>
+            <li>每一个都用一次来形成最终边界图像的角点。（Each one is used a single time to form the corners of the final border image.）</li>
+            <li>区域 5-8 边区域（edge region）。在最终的边框图像中重复，缩放或修改它们以匹配元素的尺寸。（These are repeated, scaled, or otherwise modified in the final border image to match the dimensions of the element.）</li>
+            <li>区域 9 为中心区域（ middle region）。它在默认情况下会被丢弃，但如果设置了关键字fill，则会将其用作背景图像。（It is discarded by default, but is used like a background image if the keyword fill is set.）</li>
+        </ul>
+    </div>
+</body>
+</html>

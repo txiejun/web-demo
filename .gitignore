@@ -1,0 +1,10 @@
+.idea/
+**/node_modules/
+\.storybook/
+\.DS_Store
+*.log
+*.zip
+.DS_Store
+dist/
+package-lock.json
+.vscode
